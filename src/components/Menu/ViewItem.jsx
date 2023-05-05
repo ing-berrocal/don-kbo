@@ -3,10 +3,9 @@ import { useLoaderData } from "react-router-dom";
 
 const ViewItem = ({ fnAddCart }) => {
 
-    const [cantidadProducto, setCantidadProducto] = useState(0)
-    const [valorProducto, setValorProducto] = useState(0)
-
     const { product } = useLoaderData();
+    const [cantidadProducto, setCantidadProducto] = useState(0)
+    const [valorProducto, setValorProducto] = useState(0)    
 
     console.log(product)
 
@@ -71,14 +70,10 @@ const ViewItem = ({ fnAddCart }) => {
 const Items = ({ items }) => {
     return (
         items.map(e => (
-            <div className="card" >
-                <div className="card-header">
-                    {e.title}
-                </div>
-                <ul className="list-group list-group-flush">
-                    <ItemsProducts items={e.items} />
-                </ul>
-            </div>
+            <>
+                <div>{e.title}: Min: {e.min_productos} - Max: {e.max_productos}</div>
+                <ItemsProducts items={e.items} />                
+            </>                        
         ))
     );
 }
@@ -89,10 +84,10 @@ const ItemsProducts = ({ items }) => {
         items.map(e => (
             <>
                 <div className="row">
-                    <div className="col-xs-10">
+                    <div className="col-10">
                         {e.title}
                     </div>
-                    <div className="col-xs-2">
+                    <div className="col-2">
                         <div className="input-group mb-3">
                             <button type="button" className="btn btn-outline-secondary">-1</button>
                             <input type="text" className="form-control" aria-label="0" value={numItems} />

@@ -14,4 +14,6 @@ const getLintToMaps = ({lat,lng}) =>{
     return `https://www.google.com/maps/search/?api=1&query=${lat}%2C${lng}`;
 }
 
-export { getImageMapUrl, getLintToMaps };
+const getImageAndLink = (param) => [getImageMapUrl(param), getLintToMaps(param)]
+
+export { getImageAndLink };

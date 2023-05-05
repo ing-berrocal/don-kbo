@@ -1,40 +1,36 @@
 import React, { useContext } from "react";
+
+import './ItemsContainer.css';
+
 import { Link, Navigate, redirect, useNavigate } from "react-router-dom";
 import { RestaurantContex } from "../../helper/context/RestaurantContext";
+import { getURLProductoImagen } from '../labels';
 
 const ItemsContainer = ({ producto }) => {
-    
-    const n = useNavigate();
-    const { cartItems, fnAddToCart} = useContext(RestaurantContex);
 
-    const fnRedirect = (product)=>{
+
+    const n = useNavigate();
+    const { cartItems, fnAddToCart } = useContext(RestaurantContex);
+
+    const fnRedirect = (product) => {
         fnAddToCart(product);
         //return n('/restaurant/add/123');
     }
 
     return (
-        <div className="col-xs-12 col-md-6 p-2">
-
-            <div className="row border border-2">
-                <div className="col-4">
-                    <img src={producto.url} className="card-img-top" alt="..." />
-                </div>
-                <div className="col-8">
-
-                    <div className="vstack gap-1">
-                        <div className="p-0"><h6>{producto.title}</h6></div>
-                        <div className="text-wrap">{producto.description}</div>
-                        <div className="p-0">
-                            <div className="clearfix">
-                                {/*<button type="button" className="btn"
-                                onClick={()=>fnRedirect(producto)}>Add</button>*/}
-                                <Link to={`add/${producto.id}`}>Agregar</Link>
-                                <button type="button" className="btn float-end"
-                                >$ {producto.value}</button>
-                            </div>
+        <div className="col-xs-11 col-md-5 offset-md-1">
+            <div class="card" >
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <img src={getURLProductoImagen(producto.urlImagen)} className="img-fluid rounded-start" alt="Imagen de producto" />
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">{producto.nombre}</h5>
+                            <p class="card-text">{producto.descripcion}.</p>
+                            <p class="card-text">$ {producto.valor}</p>
                         </div>
                     </div>
-
                 </div>
             </div>
 

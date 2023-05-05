@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { getText } from '../labels'
 import { RestaurantContex } from "../../helper/context/RestaurantContext";
 
 const Nav = () => {
@@ -10,17 +11,17 @@ const Nav = () => {
     <React.Fragment>
       <nav className="navbar navbar-expand-sm bg-body-tertiary">
         <div className="container-fluid">
-          <a className="navbar-brand" href="#">Don Kbo</a>
+          <a className="navbar-brand" href="#">{ getText('nav_titulo') }</a>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <Link className="nav-link" to={'/'}>Index</Link>
+                <Link className="nav-link" to={'/'}>{ import.meta.env.REACT_APP_MENU_TITULO }</Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to={'restaurant'}>Restaurant</Link>
+                <Link className="nav-link" to={'restaurant'}>{ getText('nav_menu') }</Link>
               </li>
               <li className="nav-item dropdown">
                 <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -37,7 +38,7 @@ const Nav = () => {
                 <a className="nav-link disabled">Disabled</a>
               </li>
             </ul>
-            <span class="navbar-text">
+            <span className="navbar-text">
               {user.email}
             </span>
           </div>

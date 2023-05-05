@@ -12,6 +12,10 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+
+  --menu-border-buttom: #ffa974;
+
+  --item-border-producto: #ff3757;
 }
 
 a {

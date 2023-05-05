@@ -4,20 +4,42 @@ import dataMenu from '../mockdata/MenuData';
 
 const useMenuRestaurant = () =>{
     
-    const data = getData();
-    const productosNav = data.map(menu => ({ id: menu.id, title: menu.title}));
-    const productosMenu = data.map(menu=>menu.productos.map(i=>({...i,link_id:`${menu.id}`})))
-    .reduce((a, b) => a.concat(b));
+    const dataMock = getData();
 
+    const categoriaProductos = [
+        {
+            "codigo": "prom",
+            "nombre": "Promociones"
+        },
+        {
+            "codigo": "prod",
+            "nombre": "Cubanos"
+        },
+        {
+            "codigo": "bebd",
+            "nombre": "Bebidas"
+        }
+    ].map(menu => ({ id: menu.codigo, title: menu.nombre}));
+
+
+
+    const productos = categoriaProductos.map(categoria =>dataMock[categoria.id])
+    .reduce((a, b) => a.concat(b))
+
+    console.log(productos)
+    
+    /*dataMock.map(menu=>menu.productos.map(i=>({...i,link_id:`${menu.id}`})))
+    .reduce((a, b) => a.concat(b));
+    */
     //const [ product, setProduct ] = useState(null)
-    const productosObject = {};
-    productosMenu.forEach(e=>{ productosObject[e.id] = e });
+    //const productosObject = {};
+    //productosMenu.forEach(e=>{ productosObject[e.id] = e });
 
     const getProduct = (productId)=>{
-        return productosObject[productId];
+        return []//productosObject[productId];
     }
 
-    return [productosNav,productosMenu,data,getProduct];
+    return [categoriaProductos,productos,getProduct];
 }
 
 const getData = () => {

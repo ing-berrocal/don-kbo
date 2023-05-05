@@ -15,13 +15,13 @@ import './scss/styles.scss';
 import * as bootstrap from 'bootstrap'
 
 import { Main } from './components/Principal/MainContainer';
-import { MenuContainer } from './components/Restaurant/MenuContainer';
+import { MenuContainer } from './components/Restaurante/MenuContainer';
 import { ViewItem } from './components/Menu/ViewItem';
 import Root from './components/Principal/Root';
 
 import {useMenuRestaurant} from './helper/customHook/useMenuRestaurant';
 
-const [productosNav,productosMenu,productos,getProduct] = useMenuRestaurant();
+const [categorias,productos,getProduct] = useMenuRestaurant();
 
 const router = createBrowserRouter([
   {
@@ -34,7 +34,7 @@ const router = createBrowserRouter([
     {
       path: "/restaurant",
       loader: ()=>{ return {nombre:'jkl'}},
-      element: <MenuContainer productosNav={productosNav} productos={productos}/>,
+      element: <MenuContainer Categorias={categorias} productos={productos}/>,
     },
     {
       path: "/restaurant/add/:id",

@@ -1,6 +1,6 @@
 const restaurantes = [
     {
-        id: 1,
+        id: 2,
         name: 'Centro',
         address: 'Cra. 6 #33-51, CENTRO, Montería, Córdoba.',
         point : {
@@ -19,4 +19,6 @@ const restaurantes = [
     }
 ];
 
-export default restaurantes;
+const getRestaurantInfo = ()=> new Promise((resolve,rejected)=>resolve({data:restaurantes}));
+
+export { getRestaurantInfo };

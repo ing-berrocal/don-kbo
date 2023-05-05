@@ -1,181 +1,384 @@
-const dataMenu = [
+const dataMenu =
     {
-        id: 1,
-        title: 'Promociones',
-        productos:[
+        "prod": [
             {
-                id: 'p-001',
-                title: '2 Cubo x $ 5000',
-                description: 'Promocion de 2 cubanos',
-                isProm: true,
-                value: 5000.0,
-                url:'https://img.favpng.com/25/17/16/hamburger-vegetable-sandwich-panini-breakfast-sandwich-png-favpng-K5G49FcBEYLs8xFNLYv1fdz6Q_t.jpg',
-                items:[
-                    {
-                        id: 1,
-                        title: 'Cubanos',
-                        min_productos: 2,
-                        max_productos: 2,
-                        items:[
-                            {
-                                id: 'p-c01',
-                                title: 'Cubanito Jamón y Queso',
-                                description: 'pan, butifarra, papa ripio, queso',
-                                url:'https://img.favpng.com/25/17/16/hamburger-vegetable-sandwich-panini-breakfast-sandwich-png-favpng-K5G49FcBEYLs8xFNLYv1fdz6Q_t.jpg',
-                                value: 1000.0
-                            },
-                            {
-                                id: 'p-c02',
-                                title: 'Cubanito Hawaiano',
-                                description: 'pan, butifarra, papa ripio, queso',
-                                url:'https://img.favpng.com/25/17/16/hamburger-vegetable-sandwich-panini-breakfast-sandwich-png-favpng-K5G49FcBEYLs8xFNLYv1fdz6Q_t.jpg',
-                                value: 1000.0
-                            },
-                            {
-                                id: 'p-c03',
-                                title: 'Cubanito Tocino Maíz',
-                                description: 'pan, butifarra, papa ripio, queso',
-                                url:'https://img.favpng.com/25/17/16/hamburger-vegetable-sandwich-panini-breakfast-sandwich-png-favpng-K5G49FcBEYLs8xFNLYv1fdz6Q_t.jpg',
-                                value: 1000.0
-                            },
-                            {
-                                id: 'p-c04',
-                                title: 'Cubanito Suiza',
-                                description: 'pan, butifarra, papa ripio, queso',
-                                url:'https://img.favpng.com/25/17/16/hamburger-vegetable-sandwich-panini-breakfast-sandwich-png-favpng-K5G49FcBEYLs8xFNLYv1fdz6Q_t.jpg',
-                                value: 1000.0
-                            },
-                            {
-                                id: 'p-c05',
-                                title: 'Cubanito Chorizo',
-                                description: 'pan, butifarra, papa ripio, queso',
-                                url:'https://img.favpng.com/25/17/16/hamburger-vegetable-sandwich-panini-breakfast-sandwich-png-favpng-K5G49FcBEYLs8xFNLYv1fdz6Q_t.jpg',
-                                value: 1000.0
-                            }
-                        ]
-                    }   
-                ]
+                "id": 10,
+                "categoria": "prod",
+                "codigo": "200001",
+                "nombre": "Jamon y Queso",
+                "descripcion": "parturient montes, nascetur ridiculus mus. Aenean eget magna. Suspendisse tristique",
+                "urlImagen": "823AB25F-3BBF-E737-B936-17729C445626",
+                "valor": 3000.00,
+                "items": []
             },
             {
-                id: 'p-002',
-                title: 'Combo Bigotón',
-                description: 'Promocion de cubanitos para compartir y disfrutar',
-                isProm: true,
-                value: 30000.0,
-                url:'https://img.favpng.com/25/17/16/hamburger-vegetable-sandwich-panini-breakfast-sandwich-png-favpng-K5G49FcBEYLs8xFNLYv1fdz6Q_t.jpg',
-                items:[
+                "id": 11,
+                "categoria": "prod",
+                "codigo": "200002",
+                "nombre": "Hawaiano",
+                "descripcion": "egestas. Aliquam fringilla cursus purus. Nullam scelerisque neque sed sem",
+                "urlImagen": "823AB25F-3BBF-E737-B936-17729C445626",
+                "valor": 3000.00,
+                "items": []
+            },
+            {
+                "id": 12,
+                "categoria": "prod",
+                "codigo": "200003",
+                "nombre": "Tocino Máiz",
+                "descripcion": "Nullam nisl. Maecenas malesuada fringilla est. Mauris eu turpis. Nulla",
+                "urlImagen": "823AB25F-3BBF-E737-B936-17729C445626",
+                "valor": 3000.00,
+                "items": []
+            },
+            {
+                "id": 13,
+                "categoria": "prod",
+                "codigo": "200004",
+                "nombre": "Suiza",
+                "descripcion": "Mauris eu turpis. Nulla aliquet. Proin velit. Sed malesuada augue",
+                "urlImagen": "823AB25F-3BBF-E737-B936-17729C445626",
+                "valor": 3000.00,
+                "items": []
+            },
+            {
+                "id": 14,
+                "categoria": "prod",
+                "codigo": "200005",
+                "nombre": "Chorizo",
+                "descripcion": "ultricies ornare, elit elit fermentum risus, at fringilla purus mauris",
+                "urlImagen": "823AB25F-3BBF-E737-B936-17729C445626",
+                "valor": 3000.00,
+                "items": []
+            },
+            {
+                "id": 15,
+                "categoria": "prod",
+                "codigo": "200006",
+                "nombre": "Butifarra",
+                "descripcion": "morbi tristique senectus et netus et malesuada fames ac turpis",
+                "urlImagen": "823AB25F-3BBF-E737-B936-17729C445626",
+                "valor": 3000.00,
+                "items": []
+            }
+        ],
+        "prom": [
+            {
+                "id": 1,
+                "categoria": "prom",
+                "codigo": "10001",
+                "nombre": "30 Don Cubanos",
+                "descripcion": "Llevate 30 Don Cubanos más una gaseosa",
+                "urlImagen": "823AB25F-3BBF-E737-B936-17729C445626",
+                "valor": 30000.00,
+                "items": [
                     {
-                        id: 1,
-                        title: 'Cubanos',
-                        min_productos: 10,
-                        max_productos: 10,
-                        items:[
+                        "id": 1,
+                        "nombre": "Productos",
+                        "minItems": 30,
+                        "maxItems": 30,
+                        "productos": [
                             {
-                                id: 'p-c01',
-                                title: 'Cubanito Jamón y Queso',
-                                description: 'pan, butifarra, papa ripio, queso',
-                                url:'https://img.favpng.com/25/17/16/hamburger-vegetable-sandwich-panini-breakfast-sandwich-png-favpng-K5G49FcBEYLs8xFNLYv1fdz6Q_t.jpg',
-                                value: 1000.0
+                                "id": 10,
+                                "categoria": "prod",
+                                "codigo": "200001",
+                                "nombre": "Jamon y Queso",
+                                "descripcion": "parturient montes, nascetur ridiculus mus. Aenean eget magna. Suspendisse tristique",
+                                "urlImagen": "823AB25F-3BBF-E737-B936-17729C445626",
+                                "valor": 3000.00,
+                                "items": null
                             },
                             {
-                                id: 'p-c02',
-                                title: 'Cubanito Hawaiano',
-                                description: 'pan, butifarra, papa ripio, queso',
-                                url:'https://img.favpng.com/25/17/16/hamburger-vegetable-sandwich-panini-breakfast-sandwich-png-favpng-K5G49FcBEYLs8xFNLYv1fdz6Q_t.jpg',
-                                value: 1000.0
+                                "id": 11,
+                                "categoria": "prod",
+                                "codigo": "200002",
+                                "nombre": "Hawaiano",
+                                "descripcion": "egestas. Aliquam fringilla cursus purus. Nullam scelerisque neque sed sem",
+                                "urlImagen": "5A98CC2A-5165-296E-BF60-6A578335FB9C",
+                                "valor": 3000.00,
+                                "items": null
                             },
                             {
-                                id: 'p-c03',
-                                title: 'Cubanito Tocino Maíz',
-                                description: 'pan, butifarra, papa ripio, queso',
-                                url:'https://img.favpng.com/25/17/16/hamburger-vegetable-sandwich-panini-breakfast-sandwich-png-favpng-K5G49FcBEYLs8xFNLYv1fdz6Q_t.jpg',
-                                value: 1000.0
+                                "id": 12,
+                                "categoria": "prod",
+                                "codigo": "200003",
+                                "nombre": "Tocino Máiz",
+                                "descripcion": "Nullam nisl. Maecenas malesuada fringilla est. Mauris eu turpis. Nulla",
+                                "urlImagen": "28AD96B1-7967-E455-EF55-A527E2CE474D",
+                                "valor": 3000.00,
+                                "items": null
                             },
                             {
-                                id: 'p-c04',
-                                title: 'Cubanito Suiza',
-                                description: 'pan, butifarra, papa ripio, queso',
-                                url:'https://img.favpng.com/25/17/16/hamburger-vegetable-sandwich-panini-breakfast-sandwich-png-favpng-K5G49FcBEYLs8xFNLYv1fdz6Q_t.jpg',
-                                value: 1000.0
+                                "id": 13,
+                                "categoria": "prod",
+                                "codigo": "200004",
+                                "nombre": "Suiza",
+                                "descripcion": "Mauris eu turpis. Nulla aliquet. Proin velit. Sed malesuada augue",
+                                "urlImagen": "9CB534B3-23EB-65E6-3685-34926C02606F",
+                                "valor": 3000.00,
+                                "items": null
                             },
                             {
-                                id: 'p-c05',
-                                title: 'Cubanito Chorizo',
-                                description: 'pan, butifarra, papa ripio, queso',
-                                url:'https://img.favpng.com/25/17/16/hamburger-vegetable-sandwich-panini-breakfast-sandwich-png-favpng-K5G49FcBEYLs8xFNLYv1fdz6Q_t.jpg',
-                                value: 1000.0
+                                "id": 14,
+                                "categoria": "prod",
+                                "codigo": "200005",
+                                "nombre": "Chorizo",
+                                "descripcion": "ultricies ornare, elit elit fermentum risus, at fringilla purus mauris",
+                                "urlImagen": "A6DEFBAB-6286-51B5-26E8-0CB952D3655C",
+                                "valor": 3000.00,
+                                "items": null
+                            },
+                            {
+                                "id": 15,
+                                "categoria": "prod",
+                                "codigo": "200006",
+                                "nombre": "Butifarra",
+                                "descripcion": "morbi tristique senectus et netus et malesuada fames ac turpis",
+                                "urlImagen": "2C5AE78D-4CF3-AC62-D63B-73F5A2DCC4AD",
+                                "valor": 3000.00,
+                                "items": null
                             }
                         ]
                     },
                     {
-                        id: 1,
-                        title: 'Bebida',
-                        min_productos: 1,
-                        max_productos: 1,
-                        items:[
+                        "id": 2,
+                        "nombre": "Bebidas",
+                        "minItems": 1,
+                        "maxItems": 1,
+                        "productos": [
                             {
-                                id: 1,
-                                title: 'manzana Post. 1.5 litros'
+                                "id": 41,
+                                "categoria": "bebd",
+                                "codigo": "400002",
+                                "nombre": "Coca Cola 1.5 lt",
+                                "descripcion": "Gaseosa",
+                                "urlImagen": "AD508432-6317-2D77-6FBD-233115159AE8",
+                                "valor": 29238.00,
+                                "items": null
+                            },
+                            {
+                                "id": 40,
+                                "categoria": "bebd",
+                                "codigo": "400001",
+                                "nombre": "Coca Cola 350 ml",
+                                "descripcion": "Gaseosa",
+                                "urlImagen": "222EED9D-78B3-4ECC-3429-D2331E1A668A",
+                                "valor": 42437.00,
+                                "items": null
                             }
                         ]
-                    }   
+                    }
+                ]
+            },
+            {
+                "id": 2,
+                "categoria": "prom",
+                "codigo": "10002",
+                "nombre": "3 Cubaninos + Gaseosa",
+                "descripcion": "Llevate 3 Cubanos más gaseosa",
+                "urlImagen": "823AB25F-3BBF-E737-B936-17729C445626",
+                "valor": 10000.00,
+                "items": [
+                    {
+                        "id": 3,
+                        "nombre": "Productos",
+                        "minItems": 3,
+                        "maxItems": 3,
+                        "productos": [
+                            {
+                                "id": 10,
+                                "categoria": "prod",
+                                "codigo": "200001",
+                                "nombre": "Jamon y Queso",
+                                "descripcion": "parturient montes, nascetur ridiculus mus. Aenean eget magna. Suspendisse tristique",
+                                "urlImagen": "823AB25F-3BBF-E737-B936-17729C445626",
+                                "valor": 3000.00,
+                                "items": null
+                            },
+                            {
+                                "id": 11,
+                                "categoria": "prod",
+                                "codigo": "200002",
+                                "nombre": "Hawaiano",
+                                "descripcion": "egestas. Aliquam fringilla cursus purus. Nullam scelerisque neque sed sem",
+                                "urlImagen": "5A98CC2A-5165-296E-BF60-6A578335FB9C",
+                                "valor": 3000.00,
+                                "items": null
+                            },
+                            {
+                                "id": 12,
+                                "categoria": "prod",
+                                "codigo": "200003",
+                                "nombre": "Tocino Máiz",
+                                "descripcion": "Nullam nisl. Maecenas malesuada fringilla est. Mauris eu turpis. Nulla",
+                                "urlImagen": "28AD96B1-7967-E455-EF55-A527E2CE474D",
+                                "valor": 3000.00,
+                                "items": null
+                            },
+                            {
+                                "id": 13,
+                                "categoria": "prod",
+                                "codigo": "200004",
+                                "nombre": "Suiza",
+                                "descripcion": "Mauris eu turpis. Nulla aliquet. Proin velit. Sed malesuada augue",
+                                "urlImagen": "9CB534B3-23EB-65E6-3685-34926C02606F",
+                                "valor": 3000.00,
+                                "items": null
+                            },
+                            {
+                                "id": 14,
+                                "categoria": "prod",
+                                "codigo": "200005",
+                                "nombre": "Chorizo",
+                                "descripcion": "ultricies ornare, elit elit fermentum risus, at fringilla purus mauris",
+                                "urlImagen": "A6DEFBAB-6286-51B5-26E8-0CB952D3655C",
+                                "valor": 3000.00,
+                                "items": null
+                            },
+                            {
+                                "id": 15,
+                                "categoria": "prod",
+                                "codigo": "200006",
+                                "nombre": "Butifarra",
+                                "descripcion": "morbi tristique senectus et netus et malesuada fames ac turpis",
+                                "urlImagen": "2C5AE78D-4CF3-AC62-D63B-73F5A2DCC4AD",
+                                "valor": 3000.00,
+                                "items": null
+                            }
+                        ]
+                    },
+                    {
+                        "id": 4,
+                        "nombre": "Bebidas",
+                        "minItems": 1,
+                        "maxItems": 1,
+                        "productos": [
+                            {
+                                "id": 41,
+                                "categoria": "bebd",
+                                "codigo": "400002",
+                                "nombre": "Coca Cola 1.5 lt",
+                                "descripcion": "Gaseosa",
+                                "urlImagen": "AD508432-6317-2D77-6FBD-233115159AE8",
+                                "valor": 29238.00,
+                                "items": null
+                            },
+                            {
+                                "id": 40,
+                                "categoria": "bebd",
+                                "codigo": "400001",
+                                "nombre": "Coca Cola 350 ml",
+                                "descripcion": "Gaseosa",
+                                "urlImagen": "222EED9D-78B3-4ECC-3429-D2331E1A668A",
+                                "valor": 42437.00,
+                                "items": null
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": 22,
+                "categoria": "prom",
+                "codigo": "10002",
+                "nombre": "2 Cubaninos por $ 5000",
+                "descripcion": "Llevate 2 Cubanos",
+                "urlImagen": "823AB25F-3BBF-E737-B936-17729C445626",
+                "valor": 5000.00,
+                "items": [
+                    {
+                        "id": 3,
+                        "nombre": "Productos",
+                        "minItems": 3,
+                        "maxItems": 3,
+                        "productos": [
+                            {
+                                "id": 10,
+                                "categoria": "prod",
+                                "codigo": "200001",
+                                "nombre": "Jamon y Queso",
+                                "descripcion": "parturient montes, nascetur ridiculus mus. Aenean eget magna. Suspendisse tristique",
+                                "urlImagen": "823AB25F-3BBF-E737-B936-17729C445626",
+                                "valor": 3000.00,
+                                "items": null
+                            },
+                            {
+                                "id": 11,
+                                "categoria": "prod",
+                                "codigo": "200002",
+                                "nombre": "Hawaiano",
+                                "descripcion": "egestas. Aliquam fringilla cursus purus. Nullam scelerisque neque sed sem",
+                                "urlImagen": "5A98CC2A-5165-296E-BF60-6A578335FB9C",
+                                "valor": 3000.00,
+                                "items": null
+                            },
+                            {
+                                "id": 12,
+                                "categoria": "prod",
+                                "codigo": "200003",
+                                "nombre": "Tocino Máiz",
+                                "descripcion": "Nullam nisl. Maecenas malesuada fringilla est. Mauris eu turpis. Nulla",
+                                "urlImagen": "28AD96B1-7967-E455-EF55-A527E2CE474D",
+                                "valor": 3000.00,
+                                "items": null
+                            },
+                            {
+                                "id": 13,
+                                "categoria": "prod",
+                                "codigo": "200004",
+                                "nombre": "Suiza",
+                                "descripcion": "Mauris eu turpis. Nulla aliquet. Proin velit. Sed malesuada augue",
+                                "urlImagen": "9CB534B3-23EB-65E6-3685-34926C02606F",
+                                "valor": 3000.00,
+                                "items": null
+                            },
+                            {
+                                "id": 14,
+                                "categoria": "prod",
+                                "codigo": "200005",
+                                "nombre": "Chorizo",
+                                "descripcion": "ultricies ornare, elit elit fermentum risus, at fringilla purus mauris",
+                                "urlImagen": "A6DEFBAB-6286-51B5-26E8-0CB952D3655C",
+                                "valor": 3000.00,
+                                "items": null
+                            },
+                            {
+                                "id": 15,
+                                "categoria": "prod",
+                                "codigo": "200006",
+                                "nombre": "Butifarra",
+                                "descripcion": "morbi tristique senectus et netus et malesuada fames ac turpis",
+                                "urlImagen": "2C5AE78D-4CF3-AC62-D63B-73F5A2DCC4AD",
+                                "valor": 3000.00,
+                                "items": null
+                            }
+                        ]
+                    }
                 ]
             }
-        ]
-    },
-    {
-        id: 2,
-        title: 'Cubanos',
-        productos:[
+        ],
+        "bebd": [
             {
-                id: 'p-c01',
-                title: 'Cubanito Jamón y Queso',
-                description: 'pan, butifarra, papa ripio, queso',
-                url:'https://img.favpng.com/25/17/16/hamburger-vegetable-sandwich-panini-breakfast-sandwich-png-favpng-K5G49FcBEYLs8xFNLYv1fdz6Q_t.jpg',
-                value: 1000.0
+                "id": 40,
+                "categoria": "bebd",
+                "codigo": "400001",
+                "nombre": "Coca Cola 350 ml",
+                "descripcion": "Gaseosa",
+                "urlImagen": "823AB25F-3BBF-E737-B936-17729C445626",
+                "valor": 42437.00,
+                "items": []
             },
             {
-                id: 'p-c02',
-                title: 'Cubanito Hawaiano',
-                description: 'pan, butifarra, papa ripio, queso',
-                url:'https://img.favpng.com/25/17/16/hamburger-vegetable-sandwich-panini-breakfast-sandwich-png-favpng-K5G49FcBEYLs8xFNLYv1fdz6Q_t.jpg',
-                value: 1000.0
-            },
-            {
-                id: 'p-c03',
-                title: 'Cubanito Tocino Maíz',
-                description: 'pan, butifarra, papa ripio, queso',
-                url:'https://img.favpng.com/25/17/16/hamburger-vegetable-sandwich-panini-breakfast-sandwich-png-favpng-K5G49FcBEYLs8xFNLYv1fdz6Q_t.jpg',
-                value: 1000.0
-            },
-            {
-                id: 'p-c04',
-                title: 'Cubanito Suiza',
-                description: 'pan, butifarra, papa ripio, queso',
-                url:'https://img.favpng.com/25/17/16/hamburger-vegetable-sandwich-panini-breakfast-sandwich-png-favpng-K5G49FcBEYLs8xFNLYv1fdz6Q_t.jpg',
-                value: 1000.0
-            },
-            {
-                id: 'p-c05',
-                title: 'Cubanito Chorizo',
-                description: 'pan, butifarra, papa ripio, queso',
-                url:'https://img.favpng.com/25/17/16/hamburger-vegetable-sandwich-panini-breakfast-sandwich-png-favpng-K5G49FcBEYLs8xFNLYv1fdz6Q_t.jpg',
-                value: 1000.0
+                "id": 41,
+                "categoria": "bebd",
+                "codigo": "400002",
+                "nombre": "Coca Cola 1.5 lt",
+                "descripcion": "Gaseosa",
+                "urlImagen": "823AB25F-3BBF-E737-B936-17729C445626",
+                "valor": 29238.00,
+                "items": []
             }
         ]
-    },
-    {
-        id: 3,
-        title: 'Bebidas',
-        productos:[
-            {
-                id: 'p-b01',
-                title: 'Hit',
-                url:'https://img.favpng.com/25/17/16/hamburger-vegetable-sandwich-panini-breakfast-sandwich-png-favpng-K5G49FcBEYLs8xFNLYv1fdz6Q_t.jpg',
-                value: 1000.0
-            }
-        ]
-    }
-];
+    };
 
 export  default dataMenu;

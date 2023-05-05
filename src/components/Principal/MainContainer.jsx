@@ -1,32 +1,49 @@
-import restaurantData from '../../helper/mockdata/RestaurantData';
-import {getImageMapUrl,getLintToMaps} from '../../helper/googlemap/ImageMap';
+import { useState } from 'react';
+import { getRestaurantInfo } from '../../helper/mockdata/RestaurantData';
+import { getImageAndLink } from '../../helper/googlemap/ImageMap';
 
 const Main = () => {
 
-    const restaurantes = restaurantData;
+    const [restaurantes, setRestaurantes] = useState([]);
+
+    const restaurantesConsume = async () => {
+        const object = await getRestaurantInfo();
+        //const data = await object.json();
+        return object.data;
+    };
+
+    restaurantesConsume().then(setRestaurantes);
 
     return (
         <>
             <div className="container py-4 px-3 mx-auto">
-                <div class="row">
+                <div className="row">
                     {
-                        restaurantes.map(restaurante=>(
-                            <div class="col">
-                        <div class="card mb-3">
-                            <img src={getImageMapUrl(restaurante.point)} class="card-img-top" alt="..."/>
-                                <div class="card-body">
-                                    <h5 class="card-title">{ restaurante.name }</h5>
-                                    <p class="card-text"><a target={'_blank'} href={getLintToMaps(restaurante.point)}>{ restaurante.address }</a></p>
-                                    <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
-                                </div>
-                        </div>
-                    </div>
-                        ))
+                        restaurantes.map(restaurante => {
+
+                            const [map, link] = getImageAndLink(restaurante.point);
+                            return (
+
+                                <div key={restaurante.name} className="col">
+                                    <div className="card mb-3">
+                                        <img src={name} className="card-img-top" alt="..." />
+                                        <div className="card-body">
+                                            <h5 className="card-title">Ubicacion: {restaurante.name}</h5>
+                                            <p className="card-text">Dirección <a target={'_blank'} href={link}>{restaurante.address}</a></p>
+                                            <p className="card-text"><small className="text-body-secondary">Last updated 3 mins ago</small></p>
+                                        </div>
+                                    </div>
+                                </div>)
+                        })
                     }
                 </div>
             </div>
         </>
     );
+};
+
+const Card = (name, urlImagen, urlLink, address) => {
+
 }
 
 export { Main };
