@@ -25,8 +25,6 @@ const useMenuRestaurant = () =>{
 
     const productos = categoriaProductos.map(categoria =>dataMock[categoria.id])
     .reduce((a, b) => a.concat(b))
-
-    console.log(productos)
     
     /*dataMock.map(menu=>menu.productos.map(i=>({...i,link_id:`${menu.id}`})))
     .reduce((a, b) => a.concat(b));
@@ -36,7 +34,7 @@ const useMenuRestaurant = () =>{
     //productosMenu.forEach(e=>{ productosObject[e.id] = e });
 
     const getProduct = (productId)=>{
-        return []//productosObject[productId];
+        return productos.filter(p=>p.id == productId)[0];
     }
 
     return [categoriaProductos,productos,getProduct];

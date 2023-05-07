@@ -4,6 +4,7 @@ const LABEL = {
     nav_titulo : 'Don Cubo',
     nav_index : 'Index',
     nav_menu : 'Restaurante',
+    nav_restaurantes : '¿Dondé estamos?',
 }
 
 const getText = (keyName) => {
@@ -11,7 +12,7 @@ const getText = (keyName) => {
 }
 
 const getURLProductoImagen = (url) => {
-    return `${import.meta.env.BASE_URL}productos/${url}.png`;
+    return `${import.meta.env.BASE_URL}/productos/${url}.png`;
 }
 
 export {

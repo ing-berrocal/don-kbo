@@ -4,14 +4,17 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite --host 0.0.0.0 --port 8000",
-    "build": "vite build",
+    "dev": "vite --host 0.0.0.0 --port 8000 --base /don-kbo",
+    "build": "vite build --base /don-kbo",
     "preview": "vite preview",
-    "test": "jest --watchAll"
+    "test": "jest --watchAll",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@popperjs/core": "^2.11.7",
     "bootstrap": "^5.3.0-alpha2",
+    "gh-pages": "^5.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.10.0"
@@ -31,5 +34,5 @@
     "sass": "^1.60.0",
     "vite": "^4.2.0"
   },
-  "homepage": "https://ing-berrocal.github.io/don-kbo/"
+  "homepage": "https://ing-berrocal.github.io/don-kbo"
 }

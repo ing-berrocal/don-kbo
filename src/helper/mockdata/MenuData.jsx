@@ -280,7 +280,7 @@ const dataMenu =
             {
                 "id": 22,
                 "categoria": "prom",
-                "codigo": "10002",
+                "codigo": "10022",
                 "nombre": "2 Cubaninos por $ 5000",
                 "descripcion": "Llevate 2 Cubanos",
                 "urlImagen": "823AB25F-3BBF-E737-B936-17729C445626",

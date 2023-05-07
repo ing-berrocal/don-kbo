@@ -6,9 +6,17 @@
     z-index: 100;
 
 }
-
+/* shadow-sm p-3 mb-5 bg-body-tertiary rounded */
 
 .boder-button-separador {
     border-bottom: 3px var(--menu-border-buttom) solid;
    
+}
+
+#menuNavId a{
+    border-bottom: 3px white solid;
+}
+
+#menuNavId a:hover{
+    border-bottom: 3px var(--menu-border-buttom) solid;
 }
