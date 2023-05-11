@@ -1,18 +1,26 @@
-FROM node:16-alpine
+FROM node:16-alpine as node-build
 
 #Creamos carpeta
-RUN mkdir -p /home/node/app/node_modules && chown -R node:node /home/node/app
+#RUN mkdir -p /home/node/app/node_modules && chown -R node:node /home/node/app
+RUN chown -R node:node /home/node/app
 
 WORKDIR /home/node/app
 
-COPY ../ ./
+COPY * /
 
-USER node
+#USER node
 
 RUN npm install 
 
 COPY --chown=node:node . .
 
-EXPOSE 8080
+RUN npm run build
 
-CMD [ "npm", "dev" ]
+# construccion de servidor
+FROM nginx:stable-alpine
+
+COPY /home/node/app/dist /usr/share/nginx/html
+
+EXPOSE 80
+
+CMD ["nginx", "-g", "daemon off;"]
