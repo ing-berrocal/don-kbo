@@ -8,6 +8,7 @@ pipeline {
         }
         stage('Test') {
             steps {
+                sh 'npm install --save-dev'
                 sh 'npm test'
             }
         }
