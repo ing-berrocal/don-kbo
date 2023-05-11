@@ -24,7 +24,7 @@ it('Pantalla Inicial', async () => {
   })*/
   const elementos = await screen.findAllByRole('heading', {  name: /ubicacion: /i});
   screen.debug();
-  expect(elementos.length).toBeGreaterThanOrEqual(2)
+  expect(elementos.length).toBeGreaterThanOrEqual(4)
   //await expect(screen.findAllByText(/Ubicacion/)).toBeInTheDocument();
   
   //screen.logTestingPlaygroundURL()
