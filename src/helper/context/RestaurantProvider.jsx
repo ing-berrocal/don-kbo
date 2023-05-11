@@ -3,7 +3,7 @@ import {RestaurantContex} from './RestaurantContext';
 
 export const RestaurantProvider = ({children}) => {
 
-    const [cartItems,fnAddToCart] = useCart();
+    const [cartItems,fnAddToCart, fnReset] = useCart();
 
     return (
         <RestaurantContex.Provider value={{
@@ -13,7 +13,7 @@ export const RestaurantProvider = ({children}) => {
                 email: 'email@email.com',
                 url: 'http//...'
             },
-            cartItems,fnAddToCart
+            cartItems,fnAddToCart,fnReset
           }}>
             {children}
         </RestaurantContex.Provider>

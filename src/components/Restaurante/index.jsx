@@ -1,11 +1,8 @@
 import React from "react";
-import { Outlet, Routes, Route } from 'react-router-dom';
-import './index.css';
+import { Outlet } from 'react-router-dom';
+
 
 import { NavUI } from "../site/NavBar";
-import { MenuUIContainer } from './Menu';
-import { useMenuRestaurant } from '../../helper/customHook/useMenuRestaurant';
-import { useLoaderData } from "react-router-dom";
 
 const RestaurantUIContainer = () => {
     return (<>

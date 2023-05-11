@@ -12,19 +12,28 @@ const useCart = () =>{
     }*/
     const [ cartItems, setCartItems ] = useState({
         usuario:{},
-        productos:{},
+        productos:[],
         valorTotal:0.0,
         isPending:true});
 
     const fnAddToCart = (product) =>{
-        const {id} = product;
-        const copy = cartItems;
-        copy.productos[id] = product;
+        const {id,total} = product;        
+        const tmp = cartItems.productos;
+        tmp.push(product);
 
-        setCartItems({productos:copy,valorTotal:0.0,isPending:true});
+        setCartItems({productos:tmp,valorTotal:(cartItems.valorTotal + total),isPending:true});
+        
     };
 
-    return [cartItems, fnAddToCart];
+    const fnReset = ()=>{
+        setCartItems({
+            usuario:{},
+            productos:[],
+            valorTotal:0.0,
+            isPending:true})
+    }
+
+    return [cartItems, fnAddToCart, fnReset];
 }
 
 export { useCart };

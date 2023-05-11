@@ -9,7 +9,7 @@ import {
   Routes,
 } from "react-router-dom";
 import reactLogo from './assets/react.svg'
-import './App.css'
+
 
 import { RestaurantProvider } from './helper/context/RestaurantProvider';
 
@@ -17,7 +17,9 @@ import { RestaurantProvider } from './helper/context/RestaurantProvider';
 import { RestaurantUIContainer } from './components/Restaurante';
 import { MenuUIContainer } from './components/Restaurante/Menu';
 import { ProductoItemCarUIComponente } from './components/Restaurante/ProductCart';
-import { CartItemUIContainer } from './components/Restaurante/CartItem';
+import { CartItemUIContainer } from './components/Restaurante/CartItem/CarListComponent';
+import { LogionPageUI } from './components/Autenticacion/LoginComponent';
+
 import Root from './components/site/Root';
 
 import { useMenuRestaurant } from './helper/customHook/useMenuRestaurant';
@@ -39,7 +41,7 @@ function App() {
         },
         {
           path: "add/:id",
-          element: <ProductoItemCarUIComponente fnAddCart={() => { }} />,
+          element: <ProductoItemCarUIComponente />,
           loader: ({ params }) => {
             return { producto: getProduct(params.id) };
           },
@@ -58,6 +60,10 @@ function App() {
           path: "/ubicacion",
           element: <Root />
         },
+        {
+          path: "/login",
+          element: <LogionPageUI />,
+        }
       ]
     },
     {

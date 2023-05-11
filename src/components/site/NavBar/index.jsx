@@ -24,9 +24,15 @@ const NavUI = () => {
                 <NavLink className="nav-link" to={'/ubicacion'}>{ getText('nav_restaurantes') }</NavLink>
               </li>
             </ul>
-            <span className="navbar-text">
-              {user.email}
-            </span>
+            <div class="dropdown">
+              <a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                {user.email}
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Perfil</a></li>
+                <li><a class="dropdown-item" href="#">Salir</a></li>    
+              </ul>
+              </div>            
           </div>
         </div>
       </nav>

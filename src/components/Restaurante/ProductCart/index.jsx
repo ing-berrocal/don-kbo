@@ -1,9 +1,12 @@
-import { useState } from "react";
+import { useState,useContext } from "react";
 import { useLoaderData } from "react-router-dom";
-
+import { RestaurantContex } from '../../../helper/context/RestaurantContext';
 import { getURLProductoImagen } from '../../labels';
 
-const ProductoItemCarUIComponente = ({ fnAddCart }) => {
+const ProductoItemCarUIComponente = () => {
+
+    const { fnAddToCart } = useContext(RestaurantContex);
+
 
     const { producto } = useLoaderData();
     const [cantidadProducto, setCantidadProducto] = useState(0);
@@ -16,7 +19,8 @@ const ProductoItemCarUIComponente = ({ fnAddCart }) => {
 
     const fnAddProducto = () => {
         setCantidadProducto(n => n + 1);
-        fnAddCantidad(cantidadProducto);
+        fnAddCantidad(cantidadProducto+1);
+
     }
 
     const fnMinProducto = () => {
@@ -30,7 +34,7 @@ const ProductoItemCarUIComponente = ({ fnAddCart }) => {
 
     const fnAddCar = () => {
        if(fnItemIsValid()){
-        fnAddCar(fnGet())
+        fnAddToCart(fnGet())
        }
     }
 
@@ -38,7 +42,7 @@ const ProductoItemCarUIComponente = ({ fnAddCart }) => {
     return (
         <>
             <div className="row">
-                <div className="col-md-4 offset-md-4">
+                <div className="col-md-4 offset-md-1">
                     <div className="card">
                         <img src={getURLProductoImagen(producto.urlImagen)} className="img-fluid rounded-start" alt="Imagen de producto" />
                         <div className="card-body">
@@ -73,7 +77,7 @@ const ProductoItemCarUIComponente = ({ fnAddCart }) => {
             {producto.categoria === 'prom' && (
                 producto.items.map(e=>{
                     fnItemAddCategoria(e);
-                    return (<ProductoPromocion fnItemAddSubProducto={fnItemAddSubProducto} cantidadProducto={cantidadProducto} promocion={e} />)
+                    return (<ProductoPromocion key={e.id} fnItemAddSubProducto={fnItemAddSubProducto} cantidadProducto={cantidadProducto} promocion={e} />)
                 })
             )}
         </>
@@ -104,10 +108,11 @@ const ProductoPromocion = ({ fnItemAddSubProducto, cantidadProducto, promocion }
         return [numSelecionado, (num) => fnSetProductoPromocion(setNumSelecionado, num, producto, numSelecionado)];
     }
 
-    console.log(promocion)
     return (
         <>
-            <div className="row">{promocion.nombre}: Max: {maxItems} - Seleccion: {numPromocionItems}</div>
+            <div className="row">
+                <div className="col-md-4 offset-md-4">{promocion.nombre}: Max: {maxItems} - Seleccion: {numPromocionItems}</div>
+            </div>
             {
                 promocion.productos.map(e => {
                     const [a, b] = fnNumItem(promocion,e);
@@ -146,6 +151,7 @@ const useCarHook = (producto) => {
 
     const fnAddCantidad = (cantidad) => {
         carItem.cantidad=cantidad;
+        carItem.total = (carItem.valor*cantidad)
     }
 
 
@@ -161,8 +167,6 @@ const useCarHook = (producto) => {
 
     const fnAddSubProducto = (categoriaId, categoriaCantidad, producto, cantidad) => {
 
-        console.log(carItem.items[categoriaId])
-
         let cat = carItem.items[categoriaId];
         cat.cantidad = categoriaCantidad;
 
@@ -177,13 +181,12 @@ const useCarHook = (producto) => {
     }
 
     const fnIsValid = () => {
+
         let validado = true;
         if(carItem.cantidad === 0){
             validado = false;
         }else{
-            console.log
             for(let i in carItem.items){
-                console.log(i)
                 if(carItem.items[i].cantidad != carItem.items[i].max){
                     validado = false;
                     break;
