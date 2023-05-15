@@ -20,8 +20,7 @@ function LogionPageUI() {
         const formData = new FormData(e.target);
         fetch(URL_LOGIN,{
             method: 'POST',
-            body: formData,
-            mode:'cors'
+            body: formData
         }).then(e=>e.json())
         .then((respuesta)=>{
             setAutenticateUser(respuesta.data);

@@ -23,6 +23,9 @@ import { LogionPageUI } from './components/Autenticacion/LoginComponent';
 import Root from './components/site/Root';
 
 import { useMenuRestaurant } from './helper/customHook/useMenuRestaurant';
+import { ProductoContainerUI } from './components/ProductoContainer';
+import { ProductoFormUI } from './components/ProductoForm';
+
 
 function App() {
 
@@ -63,13 +66,33 @@ function App() {
         {
           path: "/login",
           element: <LogionPageUI />,
+        },
+        {
+          path: "/admin/productos",
+          loader: () => { return { nombre: 'jkl' } },
+          element: <ProductoContainerUI />,
+        },
+        {
+          path: "/admin/producto/form",
+          loader: ({ params }) => {
+            return { producto: getProduct(params.id) };
+          },
+          element: <ProductoFormUI />,
+        },
+        {
+          path: "/admin/producto/form/:productoId",
+          loader: ({ params }) => {
+            return { producto: getProduct(params.id) };
+          },
+          element: <ProductoFormUI />,
         }
-      ]
+      ],
     },
     {
       path: "/element",
       element: (<div>Element</div>),
     },
+    
   ], {
 
   });

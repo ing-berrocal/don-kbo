@@ -40,7 +40,9 @@ const MenuOptionsAdminUI = () => {
         Administrador
       </a>
       <ul class="dropdown-menu">
-        <li><a class="dropdown-item" href="#">Gestion de productos</a></li>
+        <li>
+          <NavLink className="dropdown-item" to={'/admin/productos'}>Gestión de productos</NavLink>
+        </li>
         <li><a class="dropdown-item" href="#">Another action</a></li>
         <li><hr class="dropdown-divider" /></li>
         <li><a class="dropdown-item" href="#">Something else here</a></li>

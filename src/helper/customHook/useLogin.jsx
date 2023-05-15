@@ -24,7 +24,7 @@ const useLogin = () =>{
         setToken(null);
     }
 
-    return [ usuario, roles , estaAutenticado, setAutenticateUser, logout ]
+    return [ usuario, roles, token, estaAutenticado, setAutenticateUser, logout ]
 }
 
 export { useLogin };

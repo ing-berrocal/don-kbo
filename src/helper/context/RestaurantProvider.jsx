@@ -4,12 +4,14 @@ import {RestaurantContex} from './RestaurantContext';
 
 export const RestaurantProvider = ({children}) => {
 
-    const [usuario, roles, estaAutenticado, setAutenticateUser, logout] = useLogin();
+    const [usuario, roles, token, 
+        estaAutenticado, setAutenticateUser, logout] = useLogin();
     const [cartItems,fnAddToCart, fnReset] = useCart();
 
     return (
         <RestaurantContex.Provider value={{
-            usuario, roles,estaAutenticado,setAutenticateUser,logout,
+            usuario, roles, token,
+            estaAutenticado,setAutenticateUser,logout,
             cartItems,fnAddToCart,fnReset
           }}>
             {children}
