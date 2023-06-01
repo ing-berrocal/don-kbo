@@ -1,12 +1,6 @@
 pipeline {
     agent any
-    environment {
-        CC = 'Global'
-    }
     stages {
-        environment {
-            DEBUG = 'true'
-        }
         stage('Example') {
             steps {
                 echo "Running ${env.BUILD_ID} on ${env.BUILD_NUMBER}"
