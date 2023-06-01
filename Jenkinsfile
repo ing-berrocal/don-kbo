@@ -1,6 +1,5 @@
 pipeline {
     agent any
-    checkout scm
     environment {
         CC = 'Global'
     }
