@@ -1,8 +1,5 @@
 pipeline {
     agent any
-    environment {
-        CC = 'Global'
-    }
     stages {
         environment {
             DEBUG = 'true'
