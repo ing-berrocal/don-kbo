@@ -1,6 +1,13 @@
 pipeline {
     agent any
+    checkout scm
+    environment {
+        CC = 'Global'
+    }
     stages {
+        environment {
+            DEBUG = 'true'
+        }
         stage('Example') {
             steps {
                 echo "Running ${env.BUILD_ID} on ${env.BUILD_NUMBER}"
