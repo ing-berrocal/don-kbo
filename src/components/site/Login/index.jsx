@@ -20,7 +20,7 @@ const LoginComponentUI = ()=>{
 const LoginButton = ()=>{
     const navigate = useNavigate();
     return (
-        <button className="btn btn-primary" onClick={()=>navigate('/login')}>Login <i class="bi bi-file-person"></i></button>
+        <button className="btn btn-primary" onClick={()=>navigate('/login')}>Login <i className="bi bi-file-person"></i></button>
     );
 }
 

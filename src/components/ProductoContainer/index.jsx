@@ -22,7 +22,7 @@ const ProductoContainerUI = ()=>{
             <div className="col-3">
                 <button className="btn btn-primary" 
                 onClick={()=>{
-                    navigate('/admin/producto/form')
+                    navigate('/admin/producto/form?edit=true')
                 }}>Agregar</button>
             </div>
             <div className="col-9"></div>
