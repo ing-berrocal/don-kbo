@@ -37,7 +37,9 @@ pipeline {
             }
         }
         stage('Build'){
-            sh 'npm build'
+            steps {
+                sh 'npm build'
+            }
         }
     }
 }
